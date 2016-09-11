@@ -13,11 +13,11 @@ gem install zip-0.1.0.gem
 
 or add to your Gemfile:
 
-    `gem 'zip'`
+    gem 'zip'
 
 or install from Rubygems:
 
-    `gem install zip`
+    gem install zip
 
 keen is tested with Ruby 2.0 + and on:
 
