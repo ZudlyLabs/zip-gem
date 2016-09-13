@@ -1,36 +1,31 @@
-# Zip
+# Zyudly Official Ruby Client Library
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/zip`. To experiment with that code, run `bin/console` for an interactive prompt.
+zip-gem is the official Ruby Client for the [Zyudly Intelligence Platform](https://zyudlylabs.com) API. 
 
-TODO: Delete this and the text above, and describe your gem
+### Installation
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'zip'
+```
+git clone git@github.com:ZudlyLabs/zip-gem.git
+gem build 
+gem build zip.gemspec
+gem install zip-0.1.0.gem
 ```
 
-And then execute:
+or add to your Gemfile:
 
-    $ bundle
+    gem 'zip'
 
-Or install it yourself as:
+or install from Rubygems:
 
-    $ gem install zip
+    gem install zip
 
-## Usage
+keen is tested with Ruby 2.0 + and on:
 
-TODO: Write usage instructions here
+### Usage
 
-## Development
+```
+require "zip"
+client = Zip::KinesisClient.new("us-west-2", "stream_name", "aws_key", "aws_secret")
+client.publish(:new_user, Time.now, {"name" => "sample name", attr1: "attr1 value"})
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/zip.
-
+```
