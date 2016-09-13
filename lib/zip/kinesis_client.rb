@@ -24,7 +24,7 @@ module Zip
      end
    
      def validate_and_format(event)
-       raise "Invalid format. Please refer documentation" if event.class == Hash
+       raise "Invalid format. Please refer documentation" if event.class != Hash
        event.inject({}) {|hash, (k, v)|  hash[k.to_s.gsub(" ", "_")] = v; hash }
      end
 
