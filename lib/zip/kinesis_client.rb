@@ -11,15 +11,21 @@ module Zip
      end
 
      def publish(event_subject, event_timestamp, event)
+       formatted_event = validate_and_format(event)
        @client.put_records({
          stream_name: @stream_name,
          records: [{
            data: {event_subject: event_subject,
                   event_timestamp: event_timestamp,
-                  event_metadata: event}.to_json, 
+                  event_metadata: formatted_event}.to_json, 
            partition_key: "part_00"
          }]
        })
+     end
+   
+     def validate_and_format(event)
+       raise "Invalid format. Please refer documentation" if event.class == Hash
+       event.inject({}) {|hash, (k, v)|  hash[k.to_s.gsub(" ", "_")] = v; hash }
      end
 
   end
