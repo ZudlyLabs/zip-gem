@@ -25,7 +25,7 @@ keen is tested with Ruby 2.0 + and on:
 
 ```
 require "zip"
-client = Zip::KinesisClient.new("us-west-2", "stream_name", "aws_key", "aws_secret")
+client = Zip::KinesisClient.new("stream_name", aws_region_name)
 client.publish(:new_user, Time.now, {"name" => "sample name", attr1: "attr1 value"})
 
 ```
