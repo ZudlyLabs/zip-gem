@@ -19,7 +19,7 @@ or install from Rubygems:
 
     gem install zip
 
-keen is tested with Ruby 2.0 + and on:
+Zip gem is tested with Ruby 2.0 + and on:
 
 ### Usage
 
