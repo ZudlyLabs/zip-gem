@@ -29,7 +29,7 @@ module Zip
         records: [{
           data: {
             event_subject: event_subject,
-            event_timestamp: event_timestamp,
+            event_timestamp: event_timestamp.to_i,
             event_metadata: formatted_event
           }.to_json,
           partition_key: partition_key
